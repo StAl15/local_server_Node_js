@@ -1,4 +1,5 @@
 const http = require('http');
+//надо вынести в отдельный файл
 const html = `
 <!doctype>
 <html>
@@ -25,13 +26,14 @@ const html = `
 </html>
 `;
 
+//надо вынести в отдельный файл
 const js = `
     const button = document.querySelector('button');
     button.addEventListener('click', event => alert('Node.js in doing'));
 `;
 
 
-//создаем сервер
+//создаем сервер и обрабатываем события
 http.createServer((req, res) => {
     console.log(req.url);
     switch (req.url) {
